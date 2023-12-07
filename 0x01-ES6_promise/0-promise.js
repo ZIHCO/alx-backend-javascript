@@ -4,7 +4,7 @@ function getResponseFromAPI() {
     if (x === 0) {
       resolve('OK');
     } else {
-      reject('Error');
+      reject(new Error('Failed'));
     }
   });
 }
