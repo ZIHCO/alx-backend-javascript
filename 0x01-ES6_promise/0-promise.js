@@ -1,4 +1,4 @@
-export function getResponseFromAPI() {
+function getResponseFromAPI() {
   return new Promise((resolve, reject) => {
     const x = 0;
     if (x === 0) {
@@ -8,3 +8,5 @@ export function getResponseFromAPI() {
     }
   });
 }
+
+module.exports = getResponseFromAPI;
