@@ -1,1 +1,1 @@
---ES6 Basic
+-- Tutorial on ES6-basic
