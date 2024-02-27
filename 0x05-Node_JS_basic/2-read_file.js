@@ -6,7 +6,6 @@ module.exports = function countStudents(path) {
   }
   const fileLines = fs
     .readFileSync(path, 'utf8')
-    .toString('utf8')
     .trim()
     .split('\n')
     .slice(1);
