@@ -22,6 +22,6 @@ module.exports = function countStudents(path) {
   }
   for (const key of Object.keys(studentsField)) {
     const strList = studentsField[key].join(', ');
-    console.log(`Number of students in CS: ${studentsField[key].length}. List: ${strList}`);
+    console.log(`Number of students in ${key}: ${studentsField[key].length}. List: ${strList}`);
   }
 };
