@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-module.exports = function countStudents (path) {
+module.exports = function countStudents(path) {
   fs.readFile(path, 'utf8', (err, data) => {
     if (err) {
       console.error('Cannot load the database');
