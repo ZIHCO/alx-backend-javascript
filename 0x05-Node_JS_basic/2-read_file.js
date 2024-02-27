@@ -22,8 +22,9 @@ module.exports = function countStudents(path) {
         const listItem = item.split(',');
         studentsField[listItem[3]].push(listItem[0]);
       }
-      console.log(`Number of students in CS: ${studentsField.CS.length}. List: ${studentsField.CS}`);
-      console.log(`Number of students in SWE: ${studentsField.SWE.length}. List: ${studentsField.SWE}`);
+      for (const key of Object.keys(studentsField)) {
+        console.log(`Number of students in CS: ${studentsField[key].length}. List: ${studentsField[key]}`);
+      }
     }
   });
 };
