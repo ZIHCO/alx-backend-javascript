@@ -2,11 +2,16 @@ const fs = require('fs');
 
 module.exports = function countStudents(path) {
   fs.readFile(path, 'utf8', (err, data) => {
+    let sliceList = [];
     if (err) {
       throw new Error('Cannot load the database');
     } else {
       const list = data.split('\n');
-      const sliceList = list.slice(1, 11);
+      if (list[list.length - 1] === '') {
+        sliceList = list.slice(1, (list.length - 1));
+      } else {
+        sliceList = list.slice();
+      }
       console.log(`Number of students: ${sliceList.length}`);
       const studentsField = { CS: [], SWE: [] };
       for (const item of sliceList) {
