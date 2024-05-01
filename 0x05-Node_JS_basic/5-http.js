@@ -38,6 +38,7 @@ const app = http.createServer((req, res) => {
   } else if (req.url === '/students') {
     countStudents('database.csv')
       .then((report) => {
+	res.statusCode = 200;
         res.end(report);
       })
       .catch((err) => {
