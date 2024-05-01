@@ -42,6 +42,7 @@ const app = http.createServer((req, res) => {
         res.end(report);
       })
       .catch((err) => {
+        res.statusCode = 200;
         res.end(err);
       });
   }
