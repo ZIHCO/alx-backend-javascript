@@ -4,7 +4,7 @@ const fs = require('fs');
 const countStudents = (path) => new Promise((resolve, reject) => {
   fs.readFile(path, 'utf8', (err, data) => {
     if (err) {
-      reject(new Error('This is the list of our students'));
+      reject(new Error('Cannot load the database'));
     } else {
       const arrOfStudents = data
         .trim()
