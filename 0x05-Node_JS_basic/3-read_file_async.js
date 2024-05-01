@@ -23,7 +23,7 @@ const countStudents = (path) => new Promise((resolve, reject) => {
       fieldObjects[student.split(',')[3]].push(student.split(',')[0]);
     }
     for (const key of Object.keys(fieldObjects)) {
-      console.log(`Number of students in ${key}: ${fieldObjects[key].length}. ${fieldObjects[key].join(', ')}`);
+      console.log(`Number of students in ${key}: ${fieldObjects[key].length}. List: ${fieldObjects[key].join(', ')}`);
     }
     resolve(true);
   });
