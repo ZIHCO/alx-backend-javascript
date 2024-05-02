@@ -33,13 +33,14 @@ const countStudents = (path) => new Promise((resolve, reject) => {
 
 const PORT = 1245;
 const HOST = '127.0.0.1';
+const DB_FILE = process.argv.length > 2 ? process.argv[2] : '';
 
 const app = http.createServer((req, res) => {
   res.setHeader('Content-Type', 'text/plain');
   if (req.url === '/') {
     res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
-    countStudents(process.argv[2])
+    countStudents(DB_FILE)
       .then((report) => {
         res.setHeader('Content-Type', 'text/plain');
         res.statusCode = 200;
