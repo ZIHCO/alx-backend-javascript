@@ -4,7 +4,10 @@ const fs = require('fs');
 const countStudents = (path) => new Promise((resolve, reject) => {
   fs.readFile(path, 'utf8', (err, data) => {
     if (err) {
-      reject(new Error('Cannot load the database'));
+      const arrOfReport = [];
+      arrOfReport.push('This is the list of our students');
+      arrOfReport.push(err instanceof Error ? err.message : err.toString());
+      reject(arrOfReport.join('\n'));
     } else {
       const arrOfStudents = data
         .trim()
@@ -36,7 +39,7 @@ const app = http.createServer((req, res) => {
   if (req.url === '/') {
     res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
-    countStudents('database.csv')
+    countStudents('dtabase.csv')
       .then((report) => {
         res.setHeader('Content-Type', 'text/plain');
         res.statusCode = 200;
