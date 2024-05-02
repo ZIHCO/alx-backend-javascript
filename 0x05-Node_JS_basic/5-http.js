@@ -6,7 +6,7 @@ const countStudents = (path) => new Promise((resolve, reject) => {
     if (err) {
       const arrOfReport = [];
       arrOfReport.push('This is the list of our students');
-      arrOfReport.push(err instanceof Error ? err.message : err.toString());
+      arrOfReport.push(err instanceof Error ? 'Cannot load the database' : err.toString());
       reject(arrOfReport.join('\n'));
     } else {
       const arrOfStudents = data
