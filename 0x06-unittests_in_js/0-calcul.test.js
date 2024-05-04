@@ -11,10 +11,10 @@ describe('calculateNumber', function () {
   const a = 8.4;
   const b = 4.7;
   describe('#Math.round()', function () {
-    it('a is a number', () => {
+    it('a can be rounded', () => {
       assert.strictEqual(Math.round(a), 8);
     });
-    it('b is a number', () => {
+    it('b can be rounded', () => {
       assert.strictEqual(Math.round(b), 5);
     });
   })
