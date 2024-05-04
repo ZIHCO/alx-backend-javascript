@@ -14,6 +14,8 @@ describe('calculateNumber', function () {
     it('a can be rounded', () => {
       assert.strictEqual(Math.round(a), 8);
     });
+  });
+  describe('#Math.round()', function () {
     it('b can be rounded', () => {
       assert.strictEqual(Math.round(b), 5);
     });
