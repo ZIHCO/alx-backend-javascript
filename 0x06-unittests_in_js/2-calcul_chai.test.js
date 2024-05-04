@@ -15,6 +15,7 @@ describe('calculateNumber', function () {
     it('a is rounded', test({ operator: 'SUM', a: 6.5, b: 11.3, expected: 18 }));
     it('a is rounded', test({ operator: 'SUM', a: 8.6, b: 81.5, expected: 91 }));
   });
+
   describe('SUBTRACT', function () {
     it('correctly round and subtract 2 numbers', test({ operator: 'SUBTRACT', a: 8.4, b: 4.7, expected: 3 }));
     it('a is rounded', test({ operator: 'SUBTRACT', a: 8.4, b: 1, expected: 7 }));
@@ -22,6 +23,7 @@ describe('calculateNumber', function () {
     it('a is rounded', test({ operator: 'SUBTRACT', a: 6.5, b: 11.3, expected: -4 }));
     it('a is rounded', test({ operator: 'SUBTRACT', a: 8.6, b: 81.5, expected: -73 }));
   });
+
   describe('DIVIDE', function () {
     it('correctly round and divide 2 numbers', test({ operator: 'DIVIDE', a: 9.4, b: 2.7, expected: 3 }));
     it('correctly round and divide 2 numbers', test({ operator: 'DIVIDE', a: 9.4, b: 0.4, expected: 'Error' }));
