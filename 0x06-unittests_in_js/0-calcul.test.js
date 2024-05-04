@@ -8,4 +8,14 @@ describe('calculateNumber', function () {
       assert.strictEqual(res, expected);
     };
   it('correctly round and adds 2 numbers', test({ a: 8.4, b: 4.7, expected: 13 }));
+  const a = 8.4;
+  const b = 4.7;
+  describe('#Math.round()', function () {
+    it('a is a number', () => {
+      assert.strictEqual(Math.round(a), 8);
+    });
+    it('b is a number', () => {
+      assert.strictEqual(Math.round(b), 5);
+    });
+  })
 });
