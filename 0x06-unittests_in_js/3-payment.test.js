@@ -9,6 +9,6 @@ describe("sendPaymentRequestToApi", function () {
 		sendPaymentRequestToApi(100, 20);
 		expect(spyThis.calculateNumber.calledWith('SUM', 100, 20)).to.be.true;
 		expect(spyThis.calculateNumber.callCount).to.equal(1);
-		//spyThis.calculatorNumber.restore();
+		spyThis.calculateNumber.restore();
 	});
 });
