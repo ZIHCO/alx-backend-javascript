@@ -11,5 +11,6 @@ describe('sendPaymentRequestToApi', function () {
     expect(stubCalculateNumber.calledWith('SUM', 100, 20)).to.be.true;
     expect(spyThis.log.calledWith("The total is: 10")).to.be.true;
     spyThis.log.restore();
+    stubCalculateNumber.restore();
   });
 });
