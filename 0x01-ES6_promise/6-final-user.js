@@ -3,9 +3,11 @@ import uploadPhoto from './5-photo-reject';
 
 function handleProfileSignup(firstName, lastName, fileName) {
   return Promise
-    .then(signUpUser, uploadPhoto)
-    .then((res) => [{status: resolve, value: res}])
-    .catch((err) => [{status: reject, value: err}]);
+    .allSettled(signUpUser(firstName, lastName), uploadPhoto(fileName))
+    .then((results) => {
+      // const arrOfObjects = [];
+      results.forEach((result) => console.log(result));
+    });
 }
 
 export default handleProfileSignup;
