@@ -9,9 +9,9 @@ export default async function () {
     if (Object.hasOwnProperty.call(entry, 'value')) {
       if (index === 0) {
         return { ...obj, photo: entry.value };
-      } else {
-        return { ...obj, user: entry.value };
       }
+      return { ...obj, user: entry.value };
     }
-  }, {photo: null, user: null});
+    return obj;
+  }, { photo: null, user: null });
 }
