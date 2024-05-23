@@ -3,7 +3,7 @@ import { uploadPhoto, createUser } from './utils';
 export default async function () {
   const arrOfPromises = await Promise.allSettled([
     uploadPhoto(), createUser(),
-  ]).then((value) => value);
+  ]).then((value) => value).catch((err) => err);
 
   return arrOfPromises.reduce((obj, entry, index) => {
     if (Object.hasOwnProperty.call(entry, 'value')) {
