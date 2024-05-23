@@ -5,15 +5,13 @@ export default async function () {
     uploadPhoto(), createUser(),
   ]).then((value) => value);
 
-  return arrOfPromises.reduce((obj, entry) => {
-    const { value } = entry;
-
-    if (value.hasOwnProperty('status')) {
-      obj.photo = entry.value || null;
-    } else if (value.hasOwnProperty('firstName')) {
-      obj.user = entry.value || null;
+  return arrOfPromises.reduce((obj, entry, index) => {
+    if (Object.hasOwnProperty.call(entry, 'value')) {
+      if (index === 0) {
+        return { ...obj, photo: entry.value };
+      } else {
+        return { ...obj, user: entry.value };
+      }
     }
-
-    return obj;
-  }, {});
+  }, {photo: null, user: null});
 }
