@@ -6,11 +6,21 @@ export default async function () {
   ]).then((value) => value).catch((err) => err);
 
   return arrOfPromises.reduce((obj, entry, index) => {
-    if (Object.hasOwnProperty.call(entry, 'value')) {
+    try {
+      if (Object.hasOwnProperty.call(entry, 'reason')) {
+        throw new Error(entry.reason);
+      }
       if (index === 0) {
         return { ...obj, photo: entry.value };
       }
-      return { ...obj, user: entry.value };
+      if (index === 1) {
+        return { ...obj, user: entry.value };
+      }
+    } catch (err) {
+      if (err) {
+        return obj;
+      }
+      return obj;
     }
     return obj;
   }, { photo: null, user: null });
