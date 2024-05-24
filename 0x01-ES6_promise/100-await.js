@@ -15,7 +15,7 @@ export default async function () {
       }
       return obj;
     }, {});
-  } catch () {
-    return {photo: null, user: null};
+  } catch (err) {
+    return { photo: null, user: null };
   }
 }
