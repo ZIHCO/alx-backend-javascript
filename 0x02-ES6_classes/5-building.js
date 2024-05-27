@@ -22,11 +22,15 @@ export default class Building {
       }
       this._sqft = value;
     } catch (err) {
-      console.error(err.toString());
+      console.error(err);
     }
   }
 
   get sqft() {
     return this._sqft;
+  }
+
+  #evacuationWarningMessage() {
+    console.log('Done');
   }
 }
