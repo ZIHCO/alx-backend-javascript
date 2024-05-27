@@ -30,7 +30,5 @@ export default class Building {
     return this._sqft;
   }
 
-  #evacuationWarningMessage() {
-    console.log('Done');
-  }
+  static evacuationWarningMessage() {}
 }
