@@ -1,4 +1,4 @@
-export default function cleanSet(set, startString='') {
+export default function cleanSet(set, startString = '') {
   const result = [];
   set.forEach((entry) => {
     if ((entry && startString.length) && entry.slice(0, startString.length) === startString) {
