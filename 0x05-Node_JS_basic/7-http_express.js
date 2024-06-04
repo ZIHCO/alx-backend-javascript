@@ -32,6 +32,7 @@ app.get('/students', async (req, res) => {
         return arr;
       }, []);
     res.send(responseString.concat(analytics.join('')));
+    return 'Succeed';
   });
 });
 
