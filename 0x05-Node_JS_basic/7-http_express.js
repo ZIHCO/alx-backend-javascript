@@ -24,12 +24,13 @@ app.get('/students', (req, res) => {
       return res;
     }, { CS: [], SWE: [] });
 
-    Object
+    const analytics = Object
       .keys(groupByField)
-      .forEach((entry) => {
-        responseString = responseString + (`\nNumber of students in ${entry}: ${groupByField[entry].length}. List: ${groupByField[entry].join(', ')}`);
-      },);
-    res.send(responseString);
+      .reduce((arr, entry) => {
+        arr.push(`\nNumber of students in ${entry}: ${groupByField[entry].length}. List: ${groupByField[entry].join(', ')}`);
+        return arr;
+      }, []);
+    res.send(responseString + analytics.join(''));
   });
 });
 
