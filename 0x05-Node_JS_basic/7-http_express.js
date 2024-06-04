@@ -10,7 +10,7 @@ app.get('/students', async (req, res) => {
   await promisify(fs.readFile)(process.argv[2], 'utf8', (err, data) => {
     if (err) {
       res.send('Cannot load the database');
-      return ;
+      return 'Failed!';
     }
     const arrOfData = data
       .trim()
