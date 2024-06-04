@@ -24,7 +24,7 @@ function countStudents(path) {
     Object
       .keys(groupByField)
       .forEach(
-        (entry) => console.log(`Number of students ${entry}: ${groupByField[entry].length}. List: ${groupByField[entry].join(', ')}`),
+        (entry) => console.log(`Number of students in ${entry}: ${groupByField[entry].length}. List: ${groupByField[entry].join(', ')}`),
       );
   });
 }
