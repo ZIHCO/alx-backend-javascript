@@ -8,7 +8,7 @@ app.get('/', (req, res) => res.send('Hello Holberton School!'));
 app.get('/students', async (req, res) => {
   await (fs.readFile)(process.argv[2], 'utf8', (err, data) => {
     if (err) {
-      res.send('Cannot load the database');
+      res.send('Cannt load the database');
       return 'Failed!';
     }
     const arrOfData = data
