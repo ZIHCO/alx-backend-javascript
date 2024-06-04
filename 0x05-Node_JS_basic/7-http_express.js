@@ -1,13 +1,12 @@
 const express = require('express');
 const fs = require('fs');
-const promisify = require('util').promisify;
 
 const app = express();
 
 app.get('/', (req, res) => res.send('Hello Holberton School!'));
 
 app.get('/students', async (req, res) => {
-  await promisify(fs.readFile)(process.argv[2], 'utf8', (err, data) => {
+  await (fs.readFile)(process.argv[2], 'utf8', (err, data) => {
     if (err) {
       res.send('Cannot load the database');
       return 'Failed!';
