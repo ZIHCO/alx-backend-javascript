@@ -1,15 +1,16 @@
 const express = require('express');
 const fs = require('fs');
+const promisify = require('util').promisify;
 
 const app = express();
 
 app.get('/', (req, res) => res.send('Hello Holberton School!'));
 
-app.get('/students', (req, res) => {
-  fs.readFile(process.argv[2], 'utf8', (err, data) => {
+app.get('/students', async (req, res) => {
+  await promisify(fs.readFile)(process.argv[2], 'utf8', (err, data) => {
     if (err) {
       res.send('Cannot load the database');
-      return 'Failed!';
+      return ;
     }
     const arrOfData = data
       .trim()
@@ -31,7 +32,6 @@ app.get('/students', (req, res) => {
         return arr;
       }, []);
     res.send(responseString.concat(analytics.join('')));
-    return 'Successful!';
   });
 });
 
