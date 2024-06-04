@@ -27,7 +27,7 @@ app.get('/students', (req, res) => {
     const infoAnalytics = Object
       .keys(groupByField)
       .reduce((str, entry) => {
-        str.concat(`\nNumber of students in ${entry}: ${groupByField[entry].length}. List: ${groupByField[entry].join(', ')}`);
+        str += (`\nNumber of students in ${entry}: ${groupByField[entry].length}. List: ${groupByField[entry].join(', ')}`);
         return str;
       }, '');
     res.send(responseString + infoAnalytics);
