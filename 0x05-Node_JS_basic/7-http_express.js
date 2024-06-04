@@ -16,7 +16,7 @@ app.get('/students', (req, res) => {
       .split('\n')
       .slice(1);
   
-    responseString = (`Number of students: ${arrOfData.length}`);
+    responseString = (`This is the list of our students\nNumber of students: ${arrOfData.length}`);
   
     const groupByField = arrOfData.reduce((res, entry) => {
       const entryArray = entry.split(',');
