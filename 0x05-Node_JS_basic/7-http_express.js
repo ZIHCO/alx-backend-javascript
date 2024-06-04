@@ -16,7 +16,7 @@ app.get('/students', (req, res) => {
       .split('\n')
       .slice(1);
 
-    const responseString = (`This is the list of our students\nNumber of students: ${arrOfData.length}`);
+    let responseString = (`This is the list of our students\nNumber of students: ${arrOfData.length}`);
 
     const groupByField = arrOfData.reduce((res, entry) => {
       const entryArray = entry.split(',');
@@ -26,11 +26,10 @@ app.get('/students', (req, res) => {
 
     const infoAnalytics = Object
       .keys(groupByField)
-      .reduce((str, entry) => {
-        str += (`\nNumber of students in ${entry}: ${groupByField[entry].length}. List: ${groupByField[entry].join(', ')}`);
-        return str;
-      }, '');
-    res.send(responseString + infoAnalytics);
+      .forEach((entry) => {
+        responseString += (`\nNumber of students in ${entry}: ${groupByField[entry].length}. List: ${groupByField[entry].join(', ')}`);
+      },);
+    res.send(responseString);
   });
 });
 
