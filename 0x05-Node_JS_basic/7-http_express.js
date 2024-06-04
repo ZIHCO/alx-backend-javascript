@@ -24,7 +24,7 @@ app.get('/students', (req, res) => {
       return res;
     }, { CS: [], SWE: [] });
 
-    const infoAnalytics = Object
+    Object
       .keys(groupByField)
       .forEach((entry) => {
         responseString += (`\nNumber of students in ${entry}: ${groupByField[entry].length}. List: ${groupByField[entry].join(', ')}`);
