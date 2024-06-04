@@ -10,29 +10,29 @@ app.get('/students', (req, res) => {
     if (err) {
       res.send('Cannot load the database');
     }
-  
+
     const arrOfData = data
       .trim()
       .split('\n')
       .slice(1);
-  
-    responseString = (`This is the list of our students\nNumber of students: ${arrOfData.length}`);
-  
+
+    const responseString = (`This is the list of our students\nNumber of students: ${arrOfData.length}`);
+
     const groupByField = arrOfData.reduce((res, entry) => {
       const entryArray = entry.split(',');
       res[entryArray[3]].push(entryArray[0]);
       return res;
     }, { CS: [], SWE: [] });
-  
+
     const infoAnalytics = Object
       .keys(groupByField)
       .reduce((str, entry) => {
-        str += `\nNumber of students in ${entry}: ${groupByField[entry].length}. List: ${groupByField[entry].join(', ')}`;
+        str.concat(`\nNumber of students in ${entry}: ${groupByField[entry].length}. List: ${groupByField[entry].join(', ')}`);
         return str;
       }, '');
     res.send(responseString + infoAnalytics);
   });
-}); 
+});
 
 app.listen(1245);
 
