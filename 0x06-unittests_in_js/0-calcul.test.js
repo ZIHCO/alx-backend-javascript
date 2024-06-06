@@ -1,5 +1,5 @@
 const assert = require('assert');
-const calculateNumber = require('./0-calcul');
+const calculateNumber = require('./0-calcul.js');
 
 describe('calculateNumber', () => {
   const test = ({ a, b, expected }) =>
@@ -7,7 +7,7 @@ describe('calculateNumber', () => {
       const res = calculateNumber(a, b);
       assert.strictEqual(res, expected);
     };
-  it('correctly round and adds 2 numbers.', test({ a: 5.5, b: 4.9, expected: 11 }));
+  it('correctly round and adds 2 numbers', test({ a: 5.5, b: 4.9, expected: 11 }));
   it('a is rounded', test({ a: 5, b: 5, expected: 10 }));
   it('b is rounded', test({ a: -7.1, b: -7.6, expected: -15 }));
   /*it('It should test if it works for mixed type', test({ a: -7.1, b: 0, expected: -7}));
