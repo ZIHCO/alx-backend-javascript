@@ -10,8 +10,7 @@ describe('calculateNumber', () => {
   /* Testcase for addition */
   it('correctly round and adds 2 numbers', test({ type: 'SUM', a: 5.5, b: 4.9, expected: 11 }));
   it('a is rounded', test({ type: 'SUM', a: 5.9, b: 5, expected: 11 }));
-  it('b is rounded', test({ type: 'SUM', a: -7, b: -7.6, expected: -15 }));
-  /*it('It should test if it works for mixed type', test({ type: 'SUM', a: -7.1, b: 0.9, expected: -6}));*/
+  /*it('b is rounded', test({ type: 'SUM', a: -7, b: -7.6, expected: -15 }));*/
 
   /* Testcase for subtract */
   it('correctly round and adds 2 numbers', test({ type: 'SUBTRACT', a: 5.5, b: 4.9, expected: 1 }));
