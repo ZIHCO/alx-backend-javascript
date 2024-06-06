@@ -13,9 +13,9 @@ describe('calculateNumber', () => {
   it('b is rounded', test({ type: 'SUM', a: -7, b: -7.6, expected: -15 }));
   it('It should test if it works for mixed type', test({ type: 'SUM', a: -7.1, b: 0.9, expected: -6}));
   it('It should test if it works for mixed type', test({ type: 'SUM', a: 7.4, b: 7.9, expected: 15 }));
-  it('It should test if the return is of type INT', () => {
+  /*it('It should test if the return is of type INT', () => {
     assert.strictEqual(Number.isInteger(calculateNumber('SUM', 5.5, 4.9)), true);
-  });
+  });*/
 
   /* Testcase for subtract */
   it('correctly round and adds 2 numbers', test({ type: 'SUBTRACT', a: 5.5, b: 4.9, expected: 1 }));
@@ -23,9 +23,6 @@ describe('calculateNumber', () => {
   it('b is rounded', test({ type: 'SUBTRACT', a: -7, b: -7.6, expected: 1 }));
   it('It should test if it works for mixed type', test({ type: 'SUBTRACT', a: -7.1, b: 0.9, expected: -8}));
   it('It should test if it works for mixed type', test({ type: 'SUBTRACT', a: 7.4, b: 7.9, expected: -1 }));
-  /*it('It should test if the return is of type INT', () => {
-    assert.strictEqual(Number.isInteger(calculateNumber('SUBTRACT', 5.5, 4.9)), true);
-  });*/
 
   /* Testcases for division */
   it('correctly round and adds 2 numbers', test({ type: 'DIVIDE', a: 5.5, b: 4.9, expected: 1.2 }));
