@@ -17,4 +17,7 @@ describe('calculateNumber', () => {
   it('It should test if it works for mixed type', () => {
     assert.equal(calculateNumber(-7.1, 0), -7);
   });
+  it('It should test if it works for mixed type', () => {
+    assert.equal(calculateNumber(-7.1, 7), 0);
+  });
 });
