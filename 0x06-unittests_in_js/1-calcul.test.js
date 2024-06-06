@@ -33,7 +33,7 @@ describe('calculateNumber', () => {
   it('b is rounded', test({ type: 'DIVIDE', a: -7, b: -7.4, expected: 1 }));
   it('zero divisor', test({ type: 'DIVIDE', a: -7.1, b: 0.9, expected: -7}));
   it('It should test if it works for mixed type', test({ type: 'DIVIDE', a: 16.4, b: 7.9, expected: 2 }));
-  /*it('test if it throws an Error', () => {
+  it('test if it throws an Error', () => {
     assert.throws(() => calculateNumber('DIVIDE', 5.5, 0.4), Error, 'Error');
-  });*/
+  });
 });
