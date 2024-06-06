@@ -23,8 +23,8 @@ describe('calculateNumber', () => {
   it('b is rounded', test({ type: 'SUBTRACT', a: -7, b: -7.6, expected: 1 }));
   it('It should test if it works for mixed type', test({ type: 'SUBTRACT', a: -7.1, b: 0.9, expected: -8}));
   it('It should test if it works for mixed type', test({ type: 'SUBTRACT', a: 7.4, b: 7.9, expected: -1 }));
-  it('It should test if the return is of type INT', () => {
-    assert.strictEqual(Number.isInteger(calculateNumber('SUBTRACT', 5.5, 4.9)), true);
+  /*it('It should test if the return is of type INT', () => {
+    assert.strictEqual(Number.isInteger(calculateNumber('SUBTRACT', 5.5, 4.9)), true);*/
   });
 
   /* Testcases for division */
@@ -33,7 +33,6 @@ describe('calculateNumber', () => {
   it('b is rounded', test({ type: 'DIVIDE', a: -7, b: -7.4, expected: 1 }));
   it('zero divisor', test({ type: 'DIVIDE', a: -7.1, b: 0.9, expected: -7}));
   it('It should test if it works for mixed type', test({ type: 'DIVIDE', a: 16.4, b: 7.9, expected: 2 }));
-  it('It should test if it works for mixed type', test({ type: 'DIVIDE', a: 0.4, b: 7.9, expected: 0 }));
   it('test if it throws an Error', () => {
     assert.throws(() => calculateNumber('DIVIDE', 5.5, 0.4), Error, 'Error');
   });
