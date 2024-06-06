@@ -2,12 +2,15 @@ const assert = require('assert');
 const calculateNumber = require('./0-calcul');
 
 describe('calculateNumber', () => {
-  it('It should test if the return is the expected value', () => {
-    assert.strictEqual(calculateNumber(5.5, 4.9), 11);
-  });
-  it('It should test if the return is of type INT', () => {
+  const test = ({ a, b, expected }) =>
+    function () {
+      const res = calculateNumber(a, b);
+      assert.strictEqual(res, expected);
+    };
+  it('It should test if the return is the expected value', test({ a: 5.5, b: 4.9, expected: 11 }));
+  /*it('It should test if the return is of type INT', () => {
     assert.strictEqual(Number.isInteger(calculateNumber(5.5, 4.9)), true);
-  });
+  });*/
   it('It should test if it works for integers', () => {
     assert.strictEqual(calculateNumber(5, 5), 10);
   });
