@@ -8,9 +8,6 @@ describe('calculateNumber', () => {
       assert.strictEqual(res, expected);
     };
 
-  /* Testcase for subtract */
-  /*it('correctly round and adds 2 numbers', test({ type: 'SUBTRACT', a: 5.5, b: 4.9, expected: 1 }));*/
-
   /* Testcases for division */
   it('correctly round and adds 2 numbers', test({ type: 'DIVIDE', a: 5.5, b: 4.9, expected: 1.2 }));
   it('a is rounded', test({ type: 'DIVIDE', a: 5.9, b: 5, expected: 1.2 }));
