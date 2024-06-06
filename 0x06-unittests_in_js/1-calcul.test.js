@@ -26,8 +26,8 @@ describe('calculateNumber', () => {
   });
 
   describe('Testcases for addition', () => {
-    it('correctly round and operates 2 numbers', test({ type: 'SUM', a: 5.5, b: 4.9, expected: 1 }));
-    it('a is rounded', test({ type: 'SUM', a: 5.9, b: 5, expected: 1 }));
-    it('b is rounded', test({ type: 'SUM', a: -7, b: -7.4, expected: 0 }));
+    it('correctly round and operates 2 numbers', test({ type: 'SUM', a: 5.5, b: 4.9, expected: 11 }));
+    it('a is rounded', test({ type: 'SUM', a: 5.9, b: 5, expected: 11 }));
+    it('b is rounded', test({ type: 'SUM', a: -7, b: -7.4, expected: -14 }));
   });
 });
