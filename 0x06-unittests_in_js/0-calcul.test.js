@@ -11,16 +11,8 @@ describe('calculateNumber', () => {
   /*it('It should test if the return is of type INT', () => {
     assert.strictEqual(Number.isInteger(calculateNumber(5.5, 4.9)), true);
   });*/
-  it('It should test if it works for integers', () => {
-    assert.strictEqual(calculateNumber(5, 5), 10);
-  });
-  it('It should test if it works for 2 negatives', () => {
-    assert.strictEqual(calculateNumber(-7.1, -7.6), -15);
-  });
-  it('It should test if it works for mixed type', () => {
-    assert.strictEqual(calculateNumber(-7.1, 0), -7);
-  });
-  it('It should test if it works for mixed type', () => {
-    assert.strictEqual(calculateNumber(-7.1, 7), 0);
-  });
+  it('It should test if it works for integers', test({ a: 5, b: 5, expected: 10 }));
+  it('It should test if it works for 2 negatives', test({ a: -7.1, b: -7.6, expected: -15 }));
+  it('It should test if it works for mixed type', test({ a: -7.1, b: 0, expected: -7}));
+  it('It should test if it works for mixed type', test({ a: -7.1, b: 7, expected: 0 }));
 });
