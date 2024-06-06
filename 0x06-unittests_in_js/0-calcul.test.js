@@ -14,5 +14,5 @@ describe('calculateNumber', () => {
   it('It should test if it works for mixed type', test({ a: 7.4, b: 7.9, expected: 15 }));
   it('It should test if the return is of type INT', () => {
     assert.strictEqual(Number.isInteger(calculateNumber(5.5, 4.9)), true);
-  });*/
+  });
 });
