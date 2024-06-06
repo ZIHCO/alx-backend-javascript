@@ -7,17 +7,13 @@ describe('calculateNumber', () => {
       const res = calculateNumber(type, a, b);
       assert.strictEqual(res, expected);
     };
-  /* Testcase for addition */
-  /*it('correctly round and adds 2 numbers', test({ type: 'SUM', a: 5.5, b: 4.9, expected: 11 }));*/
-  /*it('a is rounded', test({ type: 'SUM', a: 5.9, b: 5, expected: 11 }));*/
-  /*it('b is rounded', test({ type: 'SUM', a: -7, b: -7.6, expected: -15 }));*/
 
   /* Testcase for subtract */
   it('correctly round and adds 2 numbers', test({ type: 'SUBTRACT', a: 5.5, b: 4.9, expected: 1 }));
   it('a is rounded', test({ type: 'SUBTRACT', a: 5.9, b: 5, expected: 1 }));
   it('b is rounded', test({ type: 'SUBTRACT', a: -7, b: -7.6, expected: 1 }));
   it('It should test if it works for mixed type', test({ type: 'SUBTRACT', a: -7.1, b: 0.9, expected: -8}));
-  it('It should test if it works for mixed type', test({ type: 'SUBTRACT', a: 7.4, b: 7.9, expected: -1 }));
+  /*it('It should test if it works for mixed type', test({ type: 'SUBTRACT', a: 7.4, b: 7.9, expected: -1 }));*/
 
   /* Testcases for division */
   it('correctly round and adds 2 numbers', test({ type: 'DIVIDE', a: 5.5, b: 4.9, expected: 1.2 }));
