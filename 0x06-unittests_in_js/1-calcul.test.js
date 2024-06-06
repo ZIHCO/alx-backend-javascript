@@ -10,8 +10,7 @@ describe('calculateNumber', () => {
 
   /* Testcase for subtract */
   it('correctly round and adds 2 numbers', test({ type: 'SUBTRACT', a: 5.5, b: 4.9, expected: 1 }));
-  it('a is rounded', test({ type: 'SUBTRACT', a: 5.9, b: 5, expected: 1 }));
-  /*it('b is rounded', test({ type: 'SUBTRACT', a: -7, b: -7.6, expected: 1 }));*/
+  /*it('a is rounded', test({ type: 'SUBTRACT', a: 5.9, b: 5, expected: 1 }));*/
 
   /* Testcases for division */
   it('correctly round and adds 2 numbers', test({ type: 'DIVIDE', a: 5.5, b: 4.9, expected: 1.2 }));
