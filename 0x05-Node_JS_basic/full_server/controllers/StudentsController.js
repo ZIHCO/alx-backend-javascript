@@ -1,8 +1,8 @@
-import readDatabase from '../utils';
+import readDatabase from '../utils.js';
 
 export default class StudentsController {
   static getAllStudents(request, response) {
-    readDatabase('database.csv')
+    readDatabase(process.argv[2])
       .then((data) => {
         const result = Object
           .keys(data)
@@ -18,9 +18,9 @@ export default class StudentsController {
 
   static getAllStudentsByMajor(request, response) {
     if (['CS', 'SWE'].includes(request.params.major)) {
-      readDatabase('database.csv')
+      readDatabase(process.argv[2])
         .then((data) => {
-          response.status(200).send(`List: ${data[`${request.params.major}`]}.join(', ')`);
+          response.status(200).send(`List: ${data[request.params.major].join(', ')}`);
         }).catch((error) => response.status(500).send(error));
     } else {
       response.status(500).send('Major perameter must be CS or SWE');

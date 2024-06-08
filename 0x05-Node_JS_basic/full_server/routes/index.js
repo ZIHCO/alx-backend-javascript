@@ -1,5 +1,5 @@
-import StudentsController from '../controllers/StudentsController';
-import AppController from '../controllers/AppController';
+import StudentsController from '../controllers/StudentsController.js';
+import AppController from '../controllers/AppController.js';
 const express  = require('express');
 
 const router = express.Router();
