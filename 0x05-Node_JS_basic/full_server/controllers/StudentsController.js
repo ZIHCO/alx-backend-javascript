@@ -1,0 +1,29 @@
+import readDatabase from '../utils';
+
+export default class StudentsController {
+  static getAllStudents(request, response) {
+    readDatabase('database.csv')
+      .then((data) => {
+        const result = Object
+          .keys(data)
+          .reduce((arr, entry) => {
+            arr.push(`Number of students in ${entry}: ${data[entry].length}.`
+           + `List: ${data[entry].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
+             .join(', ')}`);
+            return arr;
+          }, []);
+        response.status(200).send(`This is the list of our students\n${result.join('\n')}`);
+      }).catch((error) => response.status.send(error));
+  }
+
+  static getAllStudentsByMajor(request, response) {
+    if (['CS', 'SWE'].includes(request.params.major)) {
+      readDatabase('database.csv')
+        .then((data) => {
+          response.status(200).send(`List: ${data[`${request.params.major}`]}.join(', ')`);
+        }).catch((error) => response.status(500).send(error));
+    } else {
+      response.status(500).send('Major perameter must be CS or SWE');
+    }
+  }
+}
