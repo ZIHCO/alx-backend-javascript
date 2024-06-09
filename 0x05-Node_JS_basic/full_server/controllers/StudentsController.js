@@ -23,7 +23,7 @@ export default class StudentsController {
           response.status(200).send(`List: ${data[request.params.major].join(', ')}`);
         }).catch((error) => response.status(500).send(error));
     } else {
-      response.status(500).send('Major perameter must be CS or SWE');
+      response.status(500).send('Major parameter must be CS or SWE');
     }
   }
 }
