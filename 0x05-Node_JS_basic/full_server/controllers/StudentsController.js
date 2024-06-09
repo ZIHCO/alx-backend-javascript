@@ -22,7 +22,7 @@ export default class StudentsController {
       readDatabase(process.argv[2])
         .then((data) => {
           response.status(200).send(`List: ${data[request.params.major].join(', ')}`);
-        }).catch((error) => response.status(500).send(error));
+        }).catch((error) => response.status(500).send(error.message));
     } else {
       response.status(500).send('Major parameter must be CS or SWE');
     }
