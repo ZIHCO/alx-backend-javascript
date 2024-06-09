@@ -6,10 +6,10 @@ export default class StudentsController {
       .then((data) => {
         const result = Object
           .keys(data)
+          .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
           .reduce((arr, entry) => {
             arr.push(`Number of students in ${entry}: ${data[entry].length}.`
-           + ` List: ${data[entry].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
-             .join(', ')}`);
+           + ` List: ${data[entry].join(', ')}`);
             return arr;
           }, []);
         response.status(200).send(`This is the list of our students\n${result.join('\n')}`);
