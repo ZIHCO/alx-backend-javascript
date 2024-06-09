@@ -1,14 +1,14 @@
 const express = require('express');
-const router = require('../full_server/routes/index.js');
+const router = require('../full_server/routes/index');
 
-const server = express();
+const app = express();
 
-server.use('/', router);
+app.use('/', router);
 
-server.use('/students', router);
+app.use('/students', router);
 
-server.use('/students/:major', router);
+app.use('/students/:major', router);
 
-server.listen(1245);
+app.listen(1245);
 
-export default server;
+export default app;

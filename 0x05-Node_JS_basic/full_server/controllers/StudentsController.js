@@ -3,7 +3,7 @@ import readDatabase from '../utils.js';
 export default class StudentsController {
   static getAllStudents(request, response) {
     readDatabase(process.argv[2])
-      .then((data, error) => {
+      .then((data) => {
         const result = Object
           .keys(data)
           .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
@@ -12,7 +12,7 @@ export default class StudentsController {
            + ` List: ${data[entry].join(', ')}`);
             return arr;
           }, []);
-        response.status(200).send(`This is the list of our students\n${result.join('\n')}`); 
+        response.status(200).send(`This is the list of our students\n${result.join('\n')}`);
       })
       .catch((error) => response.status(500).send(error.message));
   }
