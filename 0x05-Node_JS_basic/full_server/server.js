@@ -1,5 +1,5 @@
 const express = require('express');
-const router = require('./routes/index.js');
+const router = require('../full_server/routes/index.js');
 
 const server = express();
 

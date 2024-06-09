@@ -8,7 +8,7 @@ export default class StudentsController {
           .keys(data)
           .reduce((arr, entry) => {
             arr.push(`Number of students in ${entry}: ${data[entry].length}.`
-           + `List: ${data[entry].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
+           + ` List: ${data[entry].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
              .join(', ')}`);
             return arr;
           }, []);
