@@ -7,8 +7,8 @@ const countStudents = (path) => new Promise((resolve, reject) => {
     } else {
       const dataArray = data
         .trim()
-        .slice(1)
-        .split('\n');
+        .split('\n')
+        .slice(1);
       console.log(`Number of students: ${dataArray.length}`);
       const fields = dataArray.reduce((result, field) => {
         if (!Object.keys(result).includes(field.split(',')[3])) {
