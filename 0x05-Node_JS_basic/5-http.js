@@ -7,8 +7,8 @@ const app = http.createServer((request, response) => {
   } else if (request.url === '/students') {
     (fs.readFile)(process.argv[2], 'utf8', (err, data) => {
       if (err) {
-        return response.end('This is the list of our students\nCannot load the database');
-        // return 'Failed!';
+        response.end('This is the list of our students\nCannot load the database');
+        return 'Failed!';
       }
       const arrOfData = data
         .trim()
@@ -29,8 +29,8 @@ const app = http.createServer((request, response) => {
           arr.push(`\nNumber of students in ${entry}: ${groupByField[entry].length}. List: ${groupByField[entry].join(', ')}`);
           return arr;
         }, []);
-      return response.end(responseString.concat(analytics.join('')));
-      // return 'Succeed';
+      response.end(responseString.concat(analytics.join('')));
+      return 'Succeed';
     });
   }
 });
